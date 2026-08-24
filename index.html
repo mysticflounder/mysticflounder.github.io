@@ -5,71 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mysticflounder</title>
 <meta name="description" content="Formal mathematics and tools for AI-assisted proof work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!-- The site-wide letterpress theme, published by the modular-schur pipeline.
+     Restyling any page of the site means changing that one stylesheet. -->
+<link rel="stylesheet" href="/modular-schur/assets/style.css">
 <style>
-  :root {
-    --paper:  oklch(0.982 0.008 85);
-    --deep:   oklch(0.957 0.013 82);
-    --ink:    oklch(0.245 0.014 62);
-    --soft:   oklch(0.505 0.016 62);
-    --accent: oklch(0.515 0.132 28);
-    --serif: Charter, "Iowan Old Style", Georgia, serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper:  oklch(0.178 0.009 62);
-      --deep:   oklch(0.213 0.010 62);
-      --ink:    oklch(0.918 0.011 82);
-      --soft:   oklch(0.735 0.013 76);
-      --accent: oklch(0.700 0.115 32);
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: var(--serif); line-height: 1.55;
-  }
-  main { max-width: max(44rem, 50vw); margin: 0 auto; padding: 4rem 1.25rem 5rem; }
-  h1 { font-size: 2rem; margin: 0 0 0.3rem; letter-spacing: 0.01em; }
-  .tagline { color: var(--soft); margin: 0 0 2.6rem; }
-  a { color: var(--accent); text-decoration: none;
-      border-bottom: 1px solid color-mix(in oklch, var(--accent) 34%, transparent); }
-  a:hover, a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
-  .feature {
-    background: var(--deep); border-radius: 10px;
-    padding: 1.4rem 1.6rem; margin: 0 0 2.8rem;
-  }
-  .feature h2 { margin: 0 0 0.45rem; font-size: 1.22rem; }
-  .feature p { margin: 0 0 0.9rem; color: var(--soft); }
-  .feature nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
-  h3 {
-    font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--soft); margin: 2.4rem 0 0.8rem;
-  }
-  ul { list-style: none; margin: 0; padding: 0; }
-  li { margin: 0 0 0.65rem; }
-  li span { color: var(--soft); }
-  footer { margin-top: 3.2rem; color: var(--soft); font-size: 0.9rem; }
+  /* Homepage glue only; all tokens and typography come from the shared theme. */
+  .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin: 0 0 0.4rem; }
+  .content li > span { color: var(--ink-soft); }
 </style>
 </head>
-<body>
-<main>
+<body class="page-home">
+
+<div class="sheet">
+
+<header class="page-header">
+  <div class="rule-double"></div>
   <h1>mysticflounder</h1>
-  <p class="tagline">Formal mathematics and tools for AI-assisted proof work.</p>
+  <p class="subtitle">Formal mathematics and tools for AI-assisted proof work.</p>
+  <div class="dateline">
+    <p class="kicker"><a href="https://github.com/mysticflounder">github.com/mysticflounder</a></p>
+  </div>
+</header>
 
-  <section class="feature">
-    <h2>A uniform closed form for modular Schur numbers</h2>
-    <p>S<sub>m</sub>(k,&#8467;) = m/gcd(m,&#8467;&minus;1) &minus; 1 for all
-       k &#8805; n&minus;1, with a Lean&nbsp;4 formalization behind an
-       independent comparator gate.</p>
-    <nav>
-      <a href="/modular-schur/">Paper</a>
-      <a href="/modular-schur/paper/modular-schur.pdf">PDF</a>
-      <a href="/modular-schur/status.html">Research status</a>
-      <a href="https://github.com/mysticflounder/modular-schur">Repository</a>
-    </nav>
-  </section>
+<div class="body-grid">
 
-  <h3>Mathematics</h3>
+<main class="content">
+
+<section>
+  <h2>A uniform closed form for modular Schur numbers</h2>
+  <p>S<sub>m</sub>(k,&#8467;) = m/gcd(m,&#8467;&minus;1) &minus; 1 for all
+     k &#8805; n&minus;1, with a Lean&nbsp;4 formalization behind an
+     independent comparator gate.</p>
+  <nav class="links">
+    <a href="/modular-schur/">Paper</a>
+    <a href="/modular-schur/paper/modular-schur.pdf">PDF</a>
+    <a href="/modular-schur/status.html">Research status</a>
+    <a href="https://github.com/mysticflounder/modular-schur">Repository</a>
+  </nav>
+</section>
+
+<section>
+  <h2>Mathematics</h2>
   <ul>
     <li><a href="https://github.com/mysticflounder/lean-formalizations">lean-formalizations</a>
         <span>&mdash; standalone Lean 4 / mathlib formalizations (WIP, unverified): Balog&ndash;Szemer&eacute;di&ndash;Gowers over Finset.addEnergy, plane-isometry rigidity</span></li>
@@ -79,8 +58,10 @@
         <span>&mdash; the d=6 exact-base branch for E677 magmas</span></li>
     <li><a href="https://github.com/mysticflounder/erdos-97-96-formalization">erdos-97-96-formalization</a></li>
   </ul>
+</section>
 
-  <h3>Tooling</h3>
+<section>
+  <h2>Tooling</h2>
   <ul>
     <li><a href="https://github.com/mysticflounder/turbotools">turbotools</a>
         <span>&mdash; Claude Code plugins</span></li>
@@ -89,10 +70,17 @@
     <li><a href="https://github.com/mysticflounder/sqlforge">sqlforge</a>
         <span>&mdash; SQLite reference implementation for specforge spec validation</span></li>
   </ul>
+</section>
 
-  <footer>
-    <a href="https://github.com/mysticflounder">github.com/mysticflounder</a>
-  </footer>
 </main>
+
+</div>
+
+<footer class="page-footer">
+  <p class="kicker"><a href="https://github.com/mysticflounder">github.com/mysticflounder</a></p>
+</footer>
+
+</div>
+
 </body>
 </html>
