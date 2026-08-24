@@ -15,6 +15,10 @@
   /* Homepage glue only; all tokens and typography come from the shared theme. */
   .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin: 0 0 0.4rem; }
   .content li > span { color: var(--ink-soft); }
+  .avatar { display: block; width: 150px; height: 150px; object-fit: cover;
+            border-radius: 8px; border: 1px solid var(--rule);
+            margin: 6px 0 26px var(--reach); }
+  @media (max-width: 860px) { .avatar { margin-left: 0; } }
   .tag { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.08em;
          text-transform: uppercase; color: var(--ink-faint); border: 1px solid var(--rule);
          border-radius: 3px; padding: 0.1em 0.5em; margin-left: 0.35em; white-space: nowrap;
@@ -27,6 +31,8 @@
 
 <header class="page-header">
   <div class="rule-double"></div>
+  <img class="avatar" src="assets/mysticflounder.jpg" width="150" height="150"
+       alt="mysticflounder avatar: a flounder-headed scientist mixing flasks at a lab bench">
   <h1>mysticflounder</h1>
   <p class="subtitle">Formal mathematics and tools for AI-assisted proof work.</p>
   <div class="dateline">
