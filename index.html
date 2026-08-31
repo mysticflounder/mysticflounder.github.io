@@ -45,10 +45,36 @@
 <main class="content">
 
 <section>
-  <h2>A uniform closed form for modular Schur numbers</h2>
+  <h2>Prime-power structure of the stable regime for modular Schur numbers</h2>
   <p>S<sub>m</sub>(k,&#8467;) = m/gcd(m,&#8467;&minus;1) &minus; 1 for all
      k &#8805; n&minus;1, with a Lean&nbsp;4 formalization behind an
      independent comparator gate.</p>
+  <ul>
+    <li><strong>A closed form that holds for every modulus.</strong>
+        With n = m/gcd(m,&#8467;&minus;1), we prove
+        S<sub>m</sub>(k,&#8467;) = n&nbsp;&minus;&nbsp;1 for all
+        m,&#8467;&nbsp;&#8805;&nbsp;2 and k&nbsp;&#8805;&nbsp;n&minus;1. This
+        settles the m&nbsp;&#8805;&nbsp;8 case left open by
+        D&#8217;orville&ndash;Sim&ndash;Wong&ndash;Ho (2025) and subsumes the
+        earlier per-modulus results. The proof is checked by the Lean&nbsp;4
+        kernel against mathlib alone: no <code>sorry</code>, no project axioms,
+        no <code>native_decide</code>.</li>
+    <li><strong>The color threshold is exact at prime moduli, and composite
+        moduli behave differently.</strong> For a prime p with
+        &#8467;&nbsp;&#8805;&nbsp;p&minus;1 and
+        &#8467;&nbsp;&#8802;&nbsp;1&nbsp;(mod&nbsp;p), the threshold is
+        k<sub>0</sub>(p,&#8467;) = p&nbsp;&minus;&nbsp;1. In
+        &#8484;/12 the pair {1,&nbsp;5} is a safe two&#8209;element class, which
+        refutes the natural guess that only singletons are safe.</li>
+    <li><strong>The composite threshold reduces to one finite question, which
+        stays open.</strong> In the stable regime the threshold depends only on
+        &#8467; mod m and splits as K&nbsp;+&nbsp;&#964;. We prove a
+        coordinate&#8209;union edge rule and a separated&#8209;fiber criterion
+        for the residual cover &#964;, but certified fibers
+        (n&nbsp;=&nbsp;880, and n&nbsp;&#8712;&nbsp;{330,&nbsp;660}) break the
+        matching witness a uniform closed form would need, so &#964; at
+        composite m remains conjectural.</li>
+  </ul>
   <nav class="links">
     <a href="/modular-schur/">Paper</a>
     <a href="/modular-schur/paper/modular-schur.pdf">PDF</a>
